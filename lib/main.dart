@@ -39,12 +39,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    if (_weatherResponses[_currentPage].weahterInfo.main == 'Clear') {
-      bgImg = 'assets/sunny.jpg';
-    } else if (_weatherResponses[_currentPage].weahterInfo.main == 'Rain') {
-      bgImg = 'assets/rainy.jpg';
-    } else if (_weatherResponses[_currentPage].weahterInfo.main == 'Clouds') {
-      bgImg = 'assets/cloudy.jpeg';
+    if (_weatherResponses.isNotEmpty) {
+      if (_weatherResponses[_currentPage].weahterInfo.main == 'Clear') {
+        bgImg = 'assets/sunny.jpg';
+      } else if (_weatherResponses[_currentPage].weahterInfo.main == 'Rain') {
+        bgImg = 'assets/rainy.jpg';
+      } else if (_weatherResponses[_currentPage].weahterInfo.main == 'Clouds') {
+        bgImg = 'assets/cloudy.jpeg';
+      }
     }
 
     return Scaffold(
@@ -114,7 +116,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _downloadWeather() async {
-    List<String> cities = ['Cracow', 'Warsaw', 'Moscow', 'New York'];
+    List<String> cities = ['Cracow', 'Moscow', 'Warsaw', 'New York'];
     for (String city in cities) {
       final response = await _dataService.getWeather(city);
       setState(() {
