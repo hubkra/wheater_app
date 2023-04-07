@@ -88,17 +88,17 @@ class SingleWeather extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Text('Wind',
+                        Text('Pressure',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white)),
-                        Text('10',
+                        Text('${weatherResponse.tempInfo.pressure}',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.white)),
-                        Text('km/h',
+                        Text('hPa',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
@@ -112,7 +112,7 @@ class SingleWeather extends StatelessWidget {
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white)),
-                        Text('10',
+                        Text('${weatherResponse.windInfo.windSpeed}',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -126,17 +126,17 @@ class SingleWeather extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Text('Wind',
+                        Text('Feels Like',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white)),
-                        Text('10',
+                        Text('${weatherResponse.tempInfo.feelsLike}',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.white)),
-                        Text('km/h',
+                        Text('\u2103',
                             style: GoogleFonts.lato(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
